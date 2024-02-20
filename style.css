@@ -1,0 +1,12 @@
+.prime{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.second img{
+    width:25px;
+    height:25px;
+    display: flex;
+    flex-direction: row;
+}
