@@ -1,26 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 </head>
+
 <body>
     <form action="/ma-page-de-traitement" method="post">
         <ul>
-          <li>
-            <label for="name">Nom&nbsp;:</label>
-            <input type="text" id="name" name="user_name" />
-          </li>
-          <li>
-            <label for="mail">E-mail&nbsp;:</label>
-            <input type="email" id="mail" name="user_mail" />
-          </li>
-          <li>
-            <label for="msg">Message&nbsp;:</label>
-            <textarea id="msg" name="user_message"></textarea>
-          </li>
+            <li>
+                <label for="titre">Titre:</label>
+                <input type="text" id="titre" name="user_titre" required></input>
+            </li>
+            <li>
+                <label for="description">Description du bien:</label>
+                <textarea id="description" name="user_description" required></textarea>
+            </li>
+            <li>
+                <label for="prix">Prix du bien:</label>
+                <input type="number" id="texte" name="user_prix" required></input>
+            </li>
+            <li>
+                <label for="adresse">Adresse du bien:</label>
+                <input type="text" id="adresse" name="user_adresse" required></input>
+            </li>
+            <li>
+                <label for="pre-select">Type de bien</label>
+                <select name="user_type" id="type" required>
+                    <option value="" disabled selected>Choisir type de bien</option>
+                    <option value="appartement" id="aparte">Appartement</option>
+                    <option value="maison" id="house">Maison</option>
+                </select>
+
+                <div id="additionalFieldAppartement" style="display: none">
+                    <!-- Champ supplémentaire pour les appartements -->
+                    <label for="appartementField">Champ pour les appartements</label>
+                    <input type="text" name="appartementField" id="appartementField">
+                </div>
+                
+                <div id="additionalFieldMaison" style="display: none">
+                    <!-- Champ supplémentaire pour les maisons -->
+                    <label for="maisonField">Champ pour les maisons</label>
+                    <input type="text" name="maisonField" id="maisonField">
+                </div>
+
+
+            </li>
+
+
+            <input type="submit" value="Send Request" />
+
         </ul>
-      </form>
+    </form>
+    <script src="./class/index.js"></script>
 </body>
+
 </html>
